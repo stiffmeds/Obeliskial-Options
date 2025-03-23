@@ -1,3 +1,21 @@
+.
+
+.
+
+[project has been taken over by binbin](https://github.com/binbinmods/Obeliskial-Options) (thank you!)
+
+apologies :')
+
+.
+
+.
+
+.
+
+.
+
+.
+
 # Obeliskial Options
 
 This is an **Across the Obelisk** mod that contains a number of options to alter gameplay.
