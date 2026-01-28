@@ -377,12 +377,12 @@ namespace Obeliskial_Options
 
       // Characters
       medsDLCClones = Config.Bind(new ConfigDefinition("Characters", "Enable Clones"), true, new ConfigDescription("Adds three clone characters to the DLC section of Hero Selection."));
-      medsDLCCloneTwo = Config.Bind(new ConfigDefinition("Characters", "Clone 1"), "loremaster", new ConfigDescription("Which subclass should be cloned into DLC slot 4?"));
-      medsDLCCloneThree = Config.Bind(new ConfigDefinition("Characters", "Clone 2"), "loremaster", new ConfigDescription("Which subclass should be cloned into DLC slot 5?"));
-      medsDLCCloneFour = Config.Bind(new ConfigDefinition("Characters", "Clone 3"), "loremaster", new ConfigDescription("Which subclass should be cloned into DLC slot 6?"));
-      medsDLCCloneTwoName = Config.Bind(new ConfigDefinition("Characters", "Clone 1 Name"), "Clone", new ConfigDescription("What should the character in DLC slot 4 be called?"));
-      medsDLCCloneThreeName = Config.Bind(new ConfigDefinition("Characters", "Clone 2 Name"), "Copy", new ConfigDescription("What should the character in DLC slot 5 be called?"));
-      medsDLCCloneFourName = Config.Bind(new ConfigDefinition("Characters", "Clone 3 Name"), "Counterfeit", new ConfigDescription("What should the character in DLC slot 6 be called?"));
+      medsDLCCloneTwo = Config.Bind(new ConfigDefinition("Characters", "Clone 1"), "loremaster", new ConfigDescription("Which subclass should clone 1 be?"));
+      medsDLCCloneThree = Config.Bind(new ConfigDefinition("Characters", "Clone 2"), "loremaster", new ConfigDescription("Which subclass should clone 2 be?"));
+      medsDLCCloneFour = Config.Bind(new ConfigDefinition("Characters", "Clone 3"), "loremaster", new ConfigDescription("Which subclass should clone 3 be?"));
+      medsDLCCloneTwoName = Config.Bind(new ConfigDefinition("Characters", "Clone 1 Name"), "Clone", new ConfigDescription("What should clone 1 be called?"));
+      medsDLCCloneThreeName = Config.Bind(new ConfigDefinition("Characters", "Clone 2 Name"), "Copy", new ConfigDescription("What should clone 2 be called?"));
+      medsDLCCloneFourName = Config.Bind(new ConfigDefinition("Characters", "Clone 3 Name"), "Counterfeit", new ConfigDescription("What should clone 3 be called?"));
       medsOver50s = Config.Bind(new ConfigDefinition("Characters", "Level Past 50"), true, new ConfigDescription("Allows characters to be raised up to rank 500."));
 
       // Corruption & Madness
