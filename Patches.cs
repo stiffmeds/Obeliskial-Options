@@ -2192,6 +2192,7 @@ namespace Obeliskial_Options
       return;
     }
 
+    /* shouldn't be necessary with scrollbar
     [HarmonyPostfix]
     [HarmonyPatch(typeof(SubClassData), "IsMultiClass")]
     public static void IsMultiClassPostfix(ref bool __result, ref SubClassData __instance)
@@ -2203,6 +2204,7 @@ namespace Obeliskial_Options
         LogInfo("SET TO TRUE?? " + __instance.OrderInList);
       }
     }
+    */
 
     [HarmonyPostfix]
     [HarmonyPatch(typeof(GameManager), "GetDeveloperMode")]
