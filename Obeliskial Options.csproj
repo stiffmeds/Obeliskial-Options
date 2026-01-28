@@ -4,14 +4,14 @@
         <TargetFramework>netstandard2.1</TargetFramework>
         <RootNamespace>Obeliskial_Options</RootNamespace>
         <AssemblyName>com.stiffmeds.obeliskialoptions</AssemblyName>
-        <Product>Obeliskial Options</Product>
+        <Product>Obeliskial_Options</Product>
         <Description>Options to alter gameplay. Define your Obeliskial Options to turn Ottis into the Miss Piggy (or Piss Miggy) of your dreams, and join Malunah, Sharon and their pet rat for glorious adventures!</Description>
         <Version>2.1.0</Version>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
         <LangVersion>latest</LangVersion>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <RunPostBuildEvent>Always</RunPostBuildEvent>
-		<Title>Obeliskial Options</Title>
+		<Title>Obeliskial_Options</Title>
     </PropertyGroup>
 
 	<Choose>
@@ -38,12 +38,14 @@
         <PackageReference Include="BepInEx.Core" Version="5.*" />
         <PackageReference Include="BepInEx.PluginInfoProps" Version="1.*" />
         <PackageReference Include="UnityEngine.Modules" Version="2022.2.13" IncludeAssets="compile" />
-        <PackageReference Include="UniverseLib.Mono" Version="1.5.1" />
+        <PackageReference Include="UniverseLib.Mono" Version="1.5.1">
+	        <NoWarn>NU1701</NoWarn>
+        </PackageReference>
     </ItemGroup>
 
     <ItemGroup>
 		<Reference Include="Obeliskial Essentials">
-			<HintPath>$(GamePath)\BepInEx\plugins\Obeliskial Essentials.dll</HintPath>
+			<HintPath>$(GamePath)\BepInEx\plugins\com.stiffmeds.obeliskialessentials.dll</HintPath>
 			<Private>False</Private>
 		</Reference>
 	    <Reference Include="Assembly-CSharp">
@@ -128,7 +130,7 @@
 	</ItemGroup>
 
 	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
-		<Exec Command="call &quot;C:\!!\dev\AtO\Obeliskial Options\bin\Debug\netstandard2.1\!move.bat&quot;" />
+		<Copy SourceFiles="$(TargetPath)" DestinationFolder="$(GamePath)\BepInEx\plugins" />
 	</Target>
 
 </Project>
