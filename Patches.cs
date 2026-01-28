@@ -1999,7 +1999,8 @@ namespace Obeliskial_Options
           AtOManager.Instance.RemovePlayerRequirement(Globals.Instance.GetRequirementData("_tier2"));
         if (AtOManager.Instance.PlayerHasRequirement(Globals.Instance.GetRequirementData("_tier3")))
           AtOManager.Instance.RemovePlayerRequirement(Globals.Instance.GetRequirementData("_tier3"));
-        if (AtOManager.Instance.PlayerHasRequirement(Globals.Instance.GetRequirementData("medsvisitedvoidlow")))
+        if (AtOManager.Instance.PlayerHasRequirement(Globals.Instance.GetRequirementData("medsvisitedvoidlow")) ||
+            AtOManager.Instance.PlayerHasRequirement(Globals.Instance.GetRequirementData("medsvisitedwitchwoods")))
         {
           Log.LogDebug("APPARENTLY WE HAVE VISITED VOIDLOW ?? ?? ??");
           AtOManager.Instance.AddPlayerRequirement(Globals.Instance.GetRequirementData("_tier3"));
@@ -2015,6 +2016,8 @@ namespace Obeliskial_Options
           if (AtOManager.Instance.PlayerHasRequirement(Globals.Instance.GetRequirementData("medsvisitedaquarfall")))
             a++;
           if (AtOManager.Instance.PlayerHasRequirement(Globals.Instance.GetRequirementData("medsvisitedfaeborg")))
+            a++;
+          if (AtOManager.Instance.PlayerHasRequirement(Globals.Instance.GetRequirementData("medsvisitedsahti")))
             a++;
           Log.LogDebug("SetTownTier a: " + a.ToString());
           if (a == 1)
@@ -2047,6 +2050,8 @@ namespace Obeliskial_Options
         LogDebug("travelling to: " + _node.nodeData.NodeId);
         if (_node.nodeData.NodeId == "voidlow_0" && !AtOManager.Instance.PlayerHasRequirement(Globals.Instance.GetRequirementData("medsvisitedvoidlow")))
           AtOManager.Instance.AddPlayerRequirement(Globals.Instance.GetRequirementData("medsvisitedvoidlow"));
+        if (_node.nodeData.NodeId == "woods_0" && !AtOManager.Instance.PlayerHasRequirement(Globals.Instance.GetRequirementData("medsvisitedwitchwoods")))
+          AtOManager.Instance.AddPlayerRequirement(Globals.Instance.GetRequirementData("medsvisitedwitchwoods"));
         UpdateTownTier(false);
       }
     }
@@ -2138,11 +2143,23 @@ namespace Obeliskial_Options
       medsReq.name = "medsvisitedulminin";
       medsEventRequirementDataSource["medsvisitedulminin"] = medsReq;
       medsReq = ScriptableObject.CreateInstance<EventRequirementData>();
+      medsReq.RequirementId = "medsvisitedsahti";
+      medsReq.RequirementName = "Visited Sahti";
+      medsReq.Description = "Visited Sahti";
+      medsReq.name = "medsvisitedsahti";
+      medsEventRequirementDataSource["medsvisitedsahti"] = medsReq;
+      medsReq = ScriptableObject.CreateInstance<EventRequirementData>();
       medsReq.RequirementId = "medsvisitedvoidlow";
       medsReq.RequirementName = "Visited Voidlow";
       medsReq.Description = "Visited Voidlow";
       medsReq.name = "medsvisitedvoidlow";
       medsEventRequirementDataSource["medsvisitedvoidlow"] = medsReq;
+      medsReq = ScriptableObject.CreateInstance<EventRequirementData>();
+      medsReq.RequirementId = "medsvisitedwitchwoods";
+      medsReq.RequirementName = "Visited Witch Woods";
+      medsReq.Description = "Visited Witch Woods";
+      medsReq.name = "medsvisitedwitchwoods";
+      medsEventRequirementDataSource["medsvisitedwitchwoods"] = medsReq;
       medsReq = ScriptableObject.CreateInstance<EventRequirementData>();
       medsReq.RequirementId = "medsimpossiblerequirement";
       medsReq.RequirementName = "Always False Requirement";
